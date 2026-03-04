@@ -226,7 +226,7 @@ class InterlockingSystem:
             if t.position != required_pos:
                 raise InterlockingError(
                     f"Turnout {turnout_id} is {t.position}, "
-                    f"need {required_pos} for route {self._routes}"
+                    f"need {required_pos} for route {route.route_id}"
                 )
 
     def _get_next_segment(self, signal: "Signal") -> "TrackSegment | None":

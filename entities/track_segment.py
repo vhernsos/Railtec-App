@@ -46,6 +46,7 @@ class TrackSegment:
     is_occupied:     bool       = False
     is_faulty:       bool       = False
     track_type:      str        = "conventional"
+    _occupying_train: str | None = field(default=None, init=False, repr=False)
 
     @property
     def length_m(self) -> float:

@@ -303,7 +303,7 @@ def main() -> None:
                 train.speed_kmh = 0.0
                 train.state    = TrainState.STOPPED
                 for seg in segments.values():
-                    if seg._occupying_train if hasattr(seg, "_occupying_train") else False:
+                    if seg._occupying_train == train.train_id:
                         seg.clear()
                 # Re-lock route
                 route_id = route_map[train.train_id][0]
